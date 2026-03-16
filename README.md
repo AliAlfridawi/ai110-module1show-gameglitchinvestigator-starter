@@ -25,13 +25,17 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+- [x] Describe the game's purpose.
+   The game is an interactive number guessing game where the player chooses a difficulty, submits guesses, and receives feedback until they win or run out of attempts.
+- [x] Detail which bugs you found.
+   The core logic functions in `logic_utils.py` were unimplemented and raised `NotImplementedError`, causing all tests to fail. The app also had duplicated logic in `app.py`, reversed hint directions, and inconsistent type handling for `secret` that could break comparisons.
+- [x] Explain what fixes you applied.
+   I implemented all four logic functions in `logic_utils.py` (`get_range_for_difficulty`, `parse_guess`, `check_guess`, and `update_score`), refactored `app.py` to import and use them, corrected hint direction mapping, removed the `secret` type-juggling bug, and updated new-game reset behavior to use the selected difficulty range. I then verified the fixes with `python -m pytest` and all tests passed.
 
 ## 📸 Demo
 
-- [ ] [Insert a screenshot of your fixed, winning game here]
+- [x] [Insert a screenshot of your fixed, winning game here]
+![Winning game screenshot](image.png)
 
 ## 🚀 Stretch Features
 
